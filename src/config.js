@@ -39,8 +39,8 @@ export const config = Object.freeze({
 });
 
 export function validateConfig() {
-  if (!config.appId || !/^\d+$/.test(config.appId)) {
-    throw new Error('DERIV_APP_ID is required and must be numeric');
+  if (!config.appId) {
+    throw new Error('DERIV_APP_ID is required');
   }
   if (config.mode === 'demo' && !config.token) {
     throw new Error('DERIV_TOKEN is required in demo mode');
