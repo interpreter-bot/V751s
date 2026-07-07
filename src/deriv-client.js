@@ -1,3 +1,5 @@
+import WebSocket from 'ws';
+
 const DEFAULT_TIMEOUT_MS = 15_000;
 
 export class DerivClient {
@@ -27,9 +29,9 @@ export class DerivClient {
         clearTimeout(timeout);
         resolve();
       }, { once: true });
-      this.ws.addEventListener('error', () => {
+      this.ws.addEventListener('error', (event) => {
         clearTimeout(timeout);
-        reject(new Error('WebSocket connection failed'));
+        reject(new Error(`WebSocket connection failed: ${event.message || event.error || 'Unknown error'}`));
       }, { once: true });
     });
 
