@@ -1,0 +1,18 @@
+{
+  "name": "deriv-v75-demo-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Seven-day, demo-locked Deriv Volatility 75 (1s) trading-bot experiment",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/bot.js",
+    "report": "node src/report.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1"
+  }
+}

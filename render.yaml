@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: deriv-v75-demo-bot
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: MODE
+        value: paper
+      - key: TEST_DAYS
+        value: 7
+      - key: DERIV_APP_ID
+        sync: false
+      - key: DERIV_TOKEN
+        sync: false
